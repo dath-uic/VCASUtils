@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Aspose;
-using Aspose.Pdf.Facades;
 using System.IO;
 using System.Web;
 using SelectPdf;
@@ -55,13 +53,13 @@ namespace VCASPdfUtil
             string buildingStandardsLocation = System.Configuration.ConfigurationSettings.AppSettings.Get("BuildingStandards");
             DirectoryInfo bldgStandards = new DirectoryInfo(buildingStandardsLocation);
 
-            DirectoryInfo[] folderArray = bldgStandards.GetDirectories();
+            DirectoryInfo[] folderArray = bldgStandards.GetDirectories().OrderBy(m => m.Name).ToArray();
             List<FileInfo> combinedFiles = new List<FileInfo>();
             foreach (DirectoryInfo folder in folderArray)
             {
                 Console.WriteLine("--->>" + folder);
                 doc = new PdfDocument();
-                FileInfo[] filePaths = folder.GetFiles("*.pdf");
+                FileInfo[] filePaths = folder.GetFiles("*.pdf").OrderBy(m => m.Name).ToArray();
                 PdfDocument doc1 = new PdfDocument();
                 foreach (FileInfo file in filePaths)
                 {
@@ -76,14 +74,21 @@ namespace VCASPdfUtil
 
             }
 
+            PdfDocument combinedDoc = new PdfDocument();
+            FileInfo[] filePathsInBldsFolder = bldgStandards.GetFiles("*.pdf").OrderBy(m => m.Name).ToArray();
+
+            foreach (FileInfo file in filePathsInBldsFolder)
+            {
+                PdfDocument combinedDoc1 = new PdfDocument(file.FullName);
+                combinedDoc.Append(combinedDoc1);
+            }
+
             foreach (DirectoryInfo folder in folderArray)
             {
                 FileInfo[] filePaths = folder.GetFiles(folder + "_MERGED_"+ DateTime.Now.ToString("dd") + DateTime.Now.ToString("yyyy") + ".pdf");
 
                 combinedFiles.Add(filePaths[0]);
             }
-
-            PdfDocument combinedDoc = new PdfDocument();
 
             foreach (FileInfo file in combinedFiles)
             {
@@ -103,7 +108,8 @@ namespace VCASPdfUtil
             NotificationModel notificationRecord = new NotificationModel();
 
             EmailMetadataModel emailMetadata = new EmailMetadataModel();
-            emailMetadata.To = new List<string>() { ConfigurationSettings.AppSettings.Get("ToEmailAddress") };
+            string toAddress = ConfigurationSettings.AppSettings.Get("ToEmailAddress");
+            emailMetadata.To = toAddress.Split(';').ToList();
             emailMetadata.From = ConfigurationSettings.AppSettings.Get("FromEmailAddress");
             emailMetadata.Subject = ConfigurationSettings.AppSettings.Get("CombiningPdfCompletedEmailSubject");
             emailMetadata.Subject +=  DateTime.Now.ToString("dd") + "/" + DateTime.Now.ToString("yyyy") ;
