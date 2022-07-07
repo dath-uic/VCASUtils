@@ -1,0 +1,25 @@
+﻿<html>
+	<head>
+		<style type='text/css'>
+			li{
+				margin: 3px 0;
+			}
+			h1, h3, b, label{
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+	<h3>Notification: Building Standards Combined PDF files generated for @DateTime.Now.ToString("dd")/@DateTime.Now.ToString("yyyy").</h3>
+	<i>This is an automated message. Please do not reply.</i>
+	<br/><br/>
+	<ul>
+		<li>Merged PDF file(s) created for each building standard within the respective folders.</li>
+		<li>One Merged PDF file containing all the standards is generated.</li>
+	</ul>
+	<br/> 
+	Click <a href="\\cppm-stor.ad.uic.edu\USERFILES\Building Standards" target="_blank">here</a> to view the merged PDF files.
+
+	</br></br>
+	</body>
+</html>
