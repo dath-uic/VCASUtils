@@ -30,3 +30,34 @@ C:\Source\VCASAppStore Master\VCASUtils\VCASUtils\bin\Debug\Select.Tools.dep
 C:\Source\VCASAppStore Master\VCASUtils\VCASUtils\obj\Debug\VCASUtils.csprojResolveAssemblyReference.cache
 C:\Source\VCASAppStore Master\VCASUtils\VCASUtils\obj\Debug\VCASUtils.exe
 C:\Source\VCASAppStore Master\VCASUtils\VCASUtils\obj\Debug\VCASUtils.pdb
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\VCASUtils.exe.config
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\VCASUtils.exe
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\VCASUtils.pdb
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Box.V2.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.AspNetCore.Razor.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\RazorEngine.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Select.Pdf.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\System.Collections.Immutable.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.AspNetCore.Razor.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\RazorEngine.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Select.Pdf.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\System.Collections.Immutable.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Select.Html.dep
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\bin\Debug\Select.Tools.dep
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\obj\Debug\VCASUtils.csprojResolveAssemblyReference.cache
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\obj\Debug\VCASUtils.exe
+C:\Users\mvenka7\Documents\GitHub\VCASUtils\VCASUtils\obj\Debug\VCASUtils.pdb

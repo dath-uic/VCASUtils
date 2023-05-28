@@ -25,24 +25,22 @@ namespace VCASPdfUtil
         public static readonly string FormsTemplateFolderPath = string.Format("{0}\\FormTemplates", Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName);
         static void Main(string[] args)
         {
-
             try
             {
-                CombinePDFUsingSelectPDF();
-                SendCompletionEmail();
+                 CombinePDFUsingSelectPDF();
+                 SendCompletionEmail();
             }
             catch (Exception ex)
             {
                 Console.Error.WriteLine(ex);
             }
-
         }
 
 
         //selectPDF
         public static void CombinePDFUsingSelectPDF()
         {
-            SelectPdf.GlobalProperties.LicenseKey = System.Configuration.ConfigurationSettings.AppSettings.Get("SelectPdfLicenseKey");
+            SelectPdf.GlobalProperties.LicenseKey = ConfigurationSettings.AppSettings.Get("SelectPdfLicenseKey");
             Console.WriteLine("--->>" + "Begin Combining Pdf's");
             DateTime dt = DateTime.Now;
             string currentMonth = dt.Month.ToString();
@@ -50,7 +48,7 @@ namespace VCASPdfUtil
 
             // create a new pdf document
             PdfDocument doc = new PdfDocument();
-            string buildingStandardsLocation = System.Configuration.ConfigurationSettings.AppSettings.Get("BuildingStandards");
+            string buildingStandardsLocation = ConfigurationSettings.AppSettings.Get("BuildingStandards");
             DirectoryInfo bldgStandards = new DirectoryInfo(buildingStandardsLocation);
 
             DirectoryInfo[] folderArray = bldgStandards.GetDirectories().OrderBy(m => m.Name).ToArray();
@@ -65,13 +63,9 @@ namespace VCASPdfUtil
                 {
                     doc1 = new PdfDocument(file.FullName);
                     doc.Append(doc1);
-
-                    //doc1.Close();
                 }
-
-                doc.Save(folder.FullName + "\\" + folder +"_MERGED_"+ DateTime.Now.ToString("dd") + DateTime.Now.ToString("yyyy") + ".pdf");
+                doc.Save(folder.FullName + "\\" + folder +"_MERGED_"+ DateTime.Now.ToString("MMyyyy") + ".pdf");
                 //<folder_name>_MERGED_072022
-
             }
 
             PdfDocument combinedDoc = new PdfDocument();
@@ -85,8 +79,7 @@ namespace VCASPdfUtil
 
             foreach (DirectoryInfo folder in folderArray)
             {
-                FileInfo[] filePaths = folder.GetFiles(folder + "_MERGED_"+ DateTime.Now.ToString("dd") + DateTime.Now.ToString("yyyy") + ".pdf");
-
+                FileInfo[] filePaths = folder.GetFiles(folder + "_MERGED_"+ DateTime.Now.ToString("MMyyyy") + ".pdf");
                 combinedFiles.Add(filePaths[0]);
             }
 
@@ -96,7 +89,7 @@ namespace VCASPdfUtil
                 combinedDoc.Append(combinedDoc1);
             }
 
-            combinedDoc.Save(buildingStandardsLocation + "\\" + "BUILDING_STANDARDS_MERGED_"+ DateTime.Now.ToString("dd") + DateTime.Now.ToString("yyyy") + ".pdf");
+            combinedDoc.Save(buildingStandardsLocation + "\\" + "BUILDING_STANDARDS_MERGED_"+ DateTime.Now.ToString("MMyyyy") + ".pdf");
             //BUILDING_STANDARDS_MERGED_072022.pdf
 
             Console.WriteLine("{DONE}");
@@ -112,7 +105,7 @@ namespace VCASPdfUtil
             emailMetadata.To = toAddress.Split(';').ToList();
             emailMetadata.From = ConfigurationSettings.AppSettings.Get("FromEmailAddress");
             emailMetadata.Subject = ConfigurationSettings.AppSettings.Get("CombiningPdfCompletedEmailSubject");
-            emailMetadata.Subject +=  DateTime.Now.ToString("dd") + "/" + DateTime.Now.ToString("yyyy") ;
+            emailMetadata.Subject +=  DateTime.Now.ToString("MM") + "/" + DateTime.Now.ToString("yyyy") ;
             emailMetadata.EmailBody = GetEmailBody(notificationRecord, "CombiningCompletedEmailTemplate.txt");
             emailMetadata.HasAttachment = false;
 

@@ -14,8 +14,8 @@
 	<i>This is an automated message. Please do not reply.</i>
 	<br/><br/>
 	<ul>
-		<li>Merged PDF file(s) created for each building standard within the respective folders.</li>
-		<li>One Merged PDF file containing all the standards is generated.</li>
+		<li>Merged PDF file(s) created for each building standard within the respective folders with file name: <b>&lt;folder&gt;_MERGED_@(DateTime.Now.ToString("MMyyyy")).pdf</b></li>
+		<li>One Merged PDF file containing all the standards is generated with file name: <b>BUILDING_STANDARDS_MERGED_@(DateTime.Now.ToString("MMyyyy")).pdf</b></li>
 	</ul>
 	<br/> 
 	Click <a href="\\cppm-stor.ad.uic.edu\USERFILES\Building Standards" target="_blank">here</a> to view the merged PDF files.
